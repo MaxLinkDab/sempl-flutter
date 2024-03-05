@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:sempl/presentation/const/app_colors.dart';
-import 'package:sempl/presentation/const/app_theme.dart';
+part of '../profile.dart';
 
 class HighlightedTextWidget extends StatelessWidget {
   final String text;

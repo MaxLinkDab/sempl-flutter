@@ -33,67 +33,71 @@ class ThanksScreen extends StatelessWidget {
                     topRight: Radius.circular(40),
                   ),
                 ),
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 22,
-                        vertical: 55,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 50),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Спасибо за ваши ответы!",
-                              style: AppTheme.boldTitle.copyWith(
-                                color: AppColor.lightGrey,
-                                height: 0.9,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            Text(
-                              "Товар будет отправлен в ближайшее время. Сроки и статус доставки можно отслеживать в личном кабинете",
-                              style: AppTheme.large.copyWith(
-                                color: AppColor.lightGrey,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            SvgPicture.asset(AppSvg.star)
-                          ],
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: SvgPicture.asset(AppSvg.triangle),
-                    ),
-                    Positioned(
-                      bottom: 20,
-                      right: 1,
-                      child: SvgPicture.asset(AppSvg.multiPointedStar),
-                    ),
-                    Positioned(
-                      bottom: 55,
-                      left: 0,
-                      right: 0,
-                      child: BaseButton(
-                        "На главный экран".toUpperCase(),
-                        foregroundColor: AppColor.grey,
-                        textStyle: AppTheme.large,
-                        icon: SvgPicture.asset(AppSvg.arrow),
-                        padding: const EdgeInsets.symmetric(horizontal: 22),
-                        onPressed: () => context.router.pop(),
-                      ),
-                    ),
-                  ],
-                ),
+                child: _buildDraggableSheet(context),
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildDraggableSheet(BuildContext context) {
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 22,
+            vertical: 55,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Спасибо за ваши ответы!",
+                  style: AppTheme.boldTitle.copyWith(
+                    color: AppColor.lightGrey,
+                    height: 0.9,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "Товар будет отправлен в ближайшее время. Сроки и статус доставки можно отслеживать в личном кабинете",
+                  style: AppTheme.large.copyWith(
+                    color: AppColor.lightGrey,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                SvgPicture.asset(AppSvg.star)
+              ],
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: SvgPicture.asset(AppSvg.triangle),
+        ),
+        Positioned(
+          bottom: 20,
+          right: 1,
+          child: SvgPicture.asset(AppSvg.multiPointedStar),
+        ),
+        Positioned(
+          bottom: 55,
+          left: 0,
+          right: 0,
+          child: BaseButton(
+            "На главный экран".toUpperCase(),
+            foregroundColor: AppColor.grey,
+            textStyle: AppTheme.large,
+            icon: SvgPicture.asset(AppSvg.arrow),
+            padding: const EdgeInsets.symmetric(horizontal: 22),
+            onPressed: () => context.router.pop(),
+          ),
+        ),
+      ],
     );
   }
 }

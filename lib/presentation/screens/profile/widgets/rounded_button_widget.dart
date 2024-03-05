@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../profile.dart';
 
 class RoundedButtonWidget extends StatelessWidget {
   final IconData icon;

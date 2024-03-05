@@ -18,50 +18,7 @@ class ProfileScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 34),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5),
-                          child: AvatarWidget(
-                            avatar: AppPng.avatar,
-                            size: 70,
-                            onTap: () {},
-                            secondaryButton: LittleEditButtonWidget(onTap: () {}),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Касия Лангер",
-                              style: AppTheme.h1,
-                            ),
-                            Text(
-                              "@wolflikemeee",
-                              style: AppTheme.medium.copyWith(
-                                color: AppColor.purple,
-                              ),
-                            ),
-                            const HighlightedTextWidget("50 баллов"),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    BaseButton(
-                      "Изменить",
-                      onPressed: () {},
-                      icon: SvgPicture.asset(AppSvg.union),
-                      textStyle: AppTheme.medium,
-                      padding: EdgeInsets.zero,
-                      backgroundColor: AppColor.blue,
-                      foregroundColor: AppColor.white,
-                    ),
-                  ],
-                ),
+                child: _buildTopProfile(),
               ),
               Text(
                 "мои ожидаемые образцы".toUpperCase(),
@@ -107,6 +64,53 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTopProfile() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 5),
+              child: AvatarWidget(
+                avatar: AppPng.avatar,
+                size: 70,
+                onTap: () {},
+                secondaryButton: LittleEditButtonWidget(onTap: () {}),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Касия Лангер",
+                  style: AppTheme.h1,
+                ),
+                Text(
+                  "@wolflikemeee",
+                  style: AppTheme.medium.copyWith(
+                    color: AppColor.purple,
+                  ),
+                ),
+                const HighlightedTextWidget("50 баллов"),
+              ],
+            ),
+          ],
+        ),
+        const Spacer(),
+        BaseButton(
+          "Изменить",
+          onPressed: () {},
+          icon: SvgPicture.asset(AppSvg.union),
+          textStyle: AppTheme.medium,
+          padding: EdgeInsets.zero,
+          backgroundColor: AppColor.blue,
+          foregroundColor: AppColor.white,
+        ),
+      ],
     );
   }
 }
